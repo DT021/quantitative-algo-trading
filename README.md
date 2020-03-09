@@ -41,7 +41,6 @@ Within the download you'll find the following directories and files, logically g
 ``` 
 quantitative-algo-trading
 ├── build/
-├── node_modules/
 ├── pug/
 │   ├── _layout/
 │   ├── _partial/
