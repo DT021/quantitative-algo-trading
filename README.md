@@ -1,0 +1,2 @@
+# quantitative-algo-trading
+The proposed system helps the people in the stock market business and make it easy for them to decide where to invest their valuable money and what is the best time to sell the stocks they own. The data will be provided by the Alpha Vantage API which provides current data of any NASDAQ listed company with their stock values and past performances. It also provides years worth of data whenever needed. The system is intended to distributed under the MIT License.
