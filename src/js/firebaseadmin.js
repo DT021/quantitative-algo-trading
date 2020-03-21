@@ -6,4 +6,3 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://qat-swe.firebaseio.com"
 });
-//# sourceMappingURL=firebaseadmin.js.map
