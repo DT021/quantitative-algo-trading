@@ -6,7 +6,6 @@
 * Copyright (c) 2020 creativeLabs Łukasz Holeczek
 * Licensed under MIT (https://coreui.io/license)
 -->
-
 <html lang="en">
   <head>
     <base href="./">
@@ -35,7 +34,10 @@
     <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- Main styles for this application-->
+
     <link href="css/style.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>
@@ -61,33 +63,26 @@
               <p class="text-muted">Create your account</p>
               <div class="input-group mb-3">
                 <div class="input-group-prepend"><span class="input-group-text">
-                    <svg class="c-icon">
-                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-user"></use>
-                    </svg></span></div>
+                    <i class="fa fa-user-o"></i></span></div>
                 <input class="form-control" type="text" placeholder="Username">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend"><span class="input-group-text">
-                    <svg class="c-icon">
-                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-envelope-open"></use>
-                    </svg></span></div>
+                    <i class="fa fa-envelope"></i></span></div>
                 <input class="form-control" type="text" placeholder="Email">
               </div>
               <div class="input-group mb-3">
                 <div class="input-group-prepend"><span class="input-group-text">
-                    <svg class="c-icon">
-                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
-                    </svg></span></div>
+                    <i class="fa fa-lock"></i></span></div>
                 <input class="form-control" type="password" placeholder="Password">
               </div>
               <div class="input-group mb-4">
                 <div class="input-group-prepend"><span class="input-group-text">
-                    <svg class="c-icon">
-                      <use xlink:href="node_modules/@coreui/icons/sprites/free.svg#cil-lock-locked"></use>
-                    </svg></span></div>
+                    <i class="fa fa-lock"></i></span></div>
                 <input class="form-control" type="password" placeholder="Repeat password">
               </div>
               <button class="btn btn-block btn-success" type="button">Create Account</button>
+              <a href="login.html" title="login">Already have an account!</a>
             </div>
             <div class="card-footer p-4">
               <div class="row">
@@ -104,9 +99,13 @@
       </div>
     </div>
     <!-- CoreUI and necessary plugins-->
-    <script src="node_modules/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+    <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
     <!--[if IE]><!-->
-    <script src="node_modules/@coreui/icons/js/svgxuse.min.js"></script>
+    <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
     <!--<![endif]-->
+
+
+
+
   </body>
 </html>

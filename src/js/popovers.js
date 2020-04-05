@@ -6,13 +6,11 @@
  * Licensed under MIT (https://coreui.io/license)
  * --------------------------------------------------------------------------
  */
-
-document.querySelectorAll('[data-toggle="popover"]').forEach(element => {
+document.querySelectorAll('[data-toggle="popover"]').forEach(function (element) {
   // eslint-disable-next-line no-new
-  new coreui.Popover(element)
-})
-
-// $('[data-toggle="popover"]').popover()
+  new coreui.Popover(element);
+}); // $('[data-toggle="popover"]').popover()
 // $('.popover-dismiss').popover({
 //   trigger: 'focus'
 // })
+//# sourceMappingURL=popovers.js.map
