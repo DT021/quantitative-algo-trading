@@ -27,125 +27,91 @@
     <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css" integrity="sha256-CuUPKpitgFmSNQuPDL5cEfPOOJT/+bwUlhfumDJ9CI4=" crossorigin="anonymous">
     <!-- Main styles for this application-->
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&amp;display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
   </head>
 
   <body class="c-app">
-    <!-- sidenav bar -->
-    <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
-      <div class="c-sidebar-brand d-lg-down-none">
-        <!-- logo QAT -->
-        <!-- <svg class="c-sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-          <use xlink:href="assets/brand/coreui.svg#full"></use>
-        </svg>
-        <svg class="c-sidebar-brand-minimized" width="46" height="46" alt="CoreUI Logo">
-          <use xlink:href="assets/brand/coreui.svg#signet"></use>
-        </svg> -->
+    <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container" style="background-color: #313d53;">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async="">
+          {
+            "symbols": [{
+                "description": "Sensex",
+                "proName": "BSE:SENSEX"
+              },
+              {
+                "description": "USD/INR",
+                "proName": "OANDA:USDINR"
+              },
+              {
+                "description": "Gold",
+                "proName": "FX_IDC:XAUINR"
+              },
+              {
+                "description": "ONGC",
+                "proName": "BSE:ONGC"
+              },
+              {
+                "proName": "OANDA:SPX500USD",
+                "title": "S&P 500"
+              }
+            ],
+            "colorTheme": "dark",
+            "market": "india",
+            "isTransparent": true,
+            "locale": "in"
+          }
+        </script>
       </div>
-
-      <ul class="c-sidebar-nav">
-        <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="index.html">
-            <i class="fa fa-dashboard" style="margin-right: 1.4em;"></i>
-            Dashboard</a></li>
-
-
-        <li class="c-sidebar-nav-title">Trading Center</li>
-        <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="marketnews.html">
-            <i class="fa fa-newspaper-o" aria-hidden="true" style="margin-right: 1.4em;"></i>
-            News</a></li>
-        <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="marketinfo.html">
-            <i class="fa fa-newspaper-o" aria-hidden="true" style="margin-right: 1.4em;"></i>
-            Market Info</a></li>
-        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown"><a class="c-sidebar-nav-link" href="strategy.html">
-            <i class="   fa fa-line-chart" style="margin-right: 1.4em;"></i>
-            Strategy</a>
-        </li>
-
-        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown"><a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
-            <i class="fa fa-money" style="margin-right: 1.4em;"></i>
-            Currencies</a>
-          <ul class="c-sidebar-nav-dropdown-items">
-            <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="cryptocurrency.html">
-                <i class="fa fa-btc" style="margin-right: 1.6em;"></i>
-                Cryptocurrency</a></li>
+      <!-- TradingView Widget END -->
+      <ul class="c-header-nav ml-auto mr-4">
+        <div data-role="appbar" data-expand-point="md" style="margin-top:75px;">
+          <a href="index.html" class="brand no-hover" style="font-family: 'Roboto', sans-serif;">Quantitative
+            Algo-Trading</a>
+          <ul class="app-bar-menu">
+            <li><a href="marketnews.html">News</a></li>
+            <li><a href="marketinfo.html">Market Info</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="forex.html">Forex</a></li>
+            <li><a href="commodities.html">Commodities</a></li>
+             <li><a href="forex_conversion.html">Forex Conversion</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
           </ul>
-        </li>
-        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown"><a class="c-sidebar-nav-link" href="commodities.html">
-            <i class="fa fa-eur" style="margin-right: 1.6em;"></i>
-            Commodities</a>
-        </li>
-
-        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown"><a class="c-sidebar-nav-link" href="#">
-            <i class="fa fa-sign-in" aria-hidden="true" style="margin-right: 1.4em;"></i>
-            Login</a>
-        </li>
-        <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="aboutus.html">
-            <i class="fa fa-users" style="margin-right: 1.4em;"></i>
-            About Us</a></li>
+        </div>
       </ul>
-      <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
-    </div>
-    <!--END sidenav bar -->
-
+    </header>
     <div class="c-wrapper c-fixed-components">
-      <!-- header Start -->
-      <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
-        <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show">
-          <i class="fa fa-bars"></i>
-        </button>
-        <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar" data-class="c-sidebar-lg-show" responsive="true">
-          <i class="fa fa-bars"></i>
-        </button>
-        <ul class="c-header-nav d-md-down-none">
-          <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="index.html">Dashboard</a></li>
-          <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="marketinfo.html">Market Info</a></li>
-          <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="strategy.html">Strategy</a></li>
-        </ul>
-        <ul class="c-header-nav ml-auto mr-4">
-
-          <li class="c-header-nav-item dropdown"><a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-              <div class="c-avatar"><img class="c-avatar-img" src="assets/img/avatars/6.jpg" alt="user@email.com"></div>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right pt-0">
-              <a class="dropdown-item" href="#">
-                <i class="fa fa-user" style="margin-right: 1em;"></i>
-                Profile</a><a class="dropdown-item" href="#">
-                <i class="fa fa-sign-out" style="margin-right: 1em;"></i> Logout</a>
+      <div class="c-body" style="padding-top:15px;">
+        <main class="c-main" style="margin-top:95px;">
+          <div class="container-fluid">
+            <div class="fade-in">
+              <!--Main Content-->
             </div>
-          </li>
-        </ul>
-      </header>
-      <!-- Header End -->
-
-      <!-- middle section start -->
-      <div class="c-body">
-        <main class="c-main">
+          </div>
         </main>
+        <footer class="c-footer">
+          <div>Quantitative Algo-Trading © 2020</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="ml-auto" style="float: left;">Powered by&nbsp;<a href="https://in.tradingview.com/">TradingView</a>
+          </div>
+        </footer>
       </div>
       <!-- middle section Ended -->
-      <footer class="c-footer">
-        <div><a href="https://coreui.io">Quantitative Algo-Trading</a> © 2020</div>
-        <div class="ml-auto">Powered by&nbsp;<a href="https://coreui.io/">Quantitative Algo-Trading</a></div>
-      </footer>
 
+      <!-- CoreUI and necessary plugins-->
+      <script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
+      <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+      <script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
+      <!--[if IE]><!-->
+      <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
+      <!--<![endif]-->
+      <script src="js/main.js"></script>
     </div>
-
-
-
-    <!-- CoreUI and necessary plugins-->
-    <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
-    <!--[if IE]><!-->
-    <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
-    <!--<![endif]-->
-    <!-- Plugins and scripts required by this view-->
-    <script src="vendors/@coreui/chartjs/js/coreui-chartjs.bundle.js"></script>
-    <script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
-    <script src="js/main.js"></script>
-
-
 
 
   </body>

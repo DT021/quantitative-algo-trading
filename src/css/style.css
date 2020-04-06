@@ -8897,7 +8897,6 @@ html:not([dir="rtl"]) .c-sidebar-close {
   overflow-x: hidden;
   overflow-y: auto;
   list-style: none;
-  font-size: 1.3em;
 }
 
 .c-sidebar-nav-title {
@@ -8929,7 +8928,6 @@ html:not([dir="rtl"]) .c-sidebar-close {
   text-decoration: none;
   white-space: nowrap;
   transition: background 0.25s, color 0.25s;
- 
 }
 
 html:not([dir="rtl"]) .c-sidebar-nav-link .badge, html:not([dir="rtl"]) .c-sidebar-nav-dropdown-toggle .badge {
