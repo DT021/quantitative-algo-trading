@@ -34,10 +34,10 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
 
-  <body class="c-app">
+  <body class="c-app" onload="fetchNews()" style="font-family: Avenir, Helvetica, Arial, sans-serif;">
     <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
       <!-- TradingView Widget BEGIN -->
-      <div class="tradingview-widget-container" style="background-color: #313d53;">
+      <div class="tradingview-widget-container" style="background-color: #2c2c2c;">
         <div class="tradingview-widget-container__widget"></div>
         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async="">
           {
@@ -80,7 +80,7 @@
             <li><a href="strategy.html">Strategy</a></li>
             <li><a href="forex.html">Forex</a></li>
             <li><a href="commodities.html">Commodities</a></li>
-             <li><a href="forex_conversion.html">Forex Conversion</a></li>
+            <li><a href="forex_conversion.html">Forex Conversion</a></li>
             <li><a href="aboutus.html">About Us</a></li>
           </ul>
         </div>
@@ -91,7 +91,12 @@
         <main class="c-main" style="margin-top:95px;">
           <div class="container-fluid">
             <div class="fade-in">
-              <!--Main Content-->
+              <div class="card">
+                <div class="card-header">
+                  <h2>Top Headlines</h2>
+                </div>
+                <div id="news" style="color: #2c2c2c !important;"></div>
+              </div>
             </div>
           </div>
         </main>
@@ -101,17 +106,68 @@
           </div>
         </footer>
       </div>
-      <!-- middle section Ended -->
 
       <!-- CoreUI and necessary plugins-->
+      <script>
+        async function fetchNews() {
+          //fetch news and display it
+          let response = await fetch(
+            "https://newsapi.org/v2/top-headlines?country=in&category=business", {
+              "method": "GET",
+              "headers": {
+                "X-Api-Key": "254790c6a1f9496a9ef5b735e7a4b910",
+              }
+            });
+          return await response.json();
+        }
+        fetchNews().then((json) => {
+          console.log(json);
+          var html = "<div class=card-body>";
+          html += "<div class=list-group>";
+          var result = Object.assign({}, json);
+          for (var i = 0; i < json.articles.length; i++) {
+            html += "<a target=_blank class=list-group-item href=" + result.articles[i].url;
+            html += ">";
+            html += "<span>";
+            html += "<img width=200 height=100 src=" + result.articles[i].urlToImage + ">";
+            html += "</img>";
+            html += "<section>"
+            html += "<h4 class=mb-1>" + result.articles[i].title + "</h4>" + "<small>" + result.articles[i]
+              .publishedAt + "</small>";
+            html += "<p class=mb-1>" + result.articles[i].description + "</p>" + "<small>" + result.articles[i]
+              .source.name + "</small>";
+            html += "</section>";
+            html += "</span>";
+            html += "</a>"
+          }
+          html += "</div>";
+          html += "</div>"
+          document.getElementById("news").innerHTML = html;
+          //$("span").addClass("align-items-start");
+          $("span").css("color", "#2c2c2c");
+          $("span").css("display", "-webkit-box");
+          $("span").css("display", "-moz-box");
+          $("span").css("display", "-ms-flexbox");
+          $("span").css("display", "-webkit-flex");
+          $("span").css("display", "flex");
+          $("img").css("text-align", "left");
+          $("img").css("max-width", "200");
+          $("section").css("margin-left", "25px");
+        }).catch(e => console.log(e));
+      </script>
+
+
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
       <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
       <script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
       <!--[if IE]><!-->
       <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
       <!--<![endif]-->
-      <script src="js/main.js"></script>
     </div>
+
+
+
 
 
   </body>
