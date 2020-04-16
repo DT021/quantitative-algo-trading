@@ -95,14 +95,13 @@ Edit files only in the dist/ directory. When you run ```npm run serve``` the pro
 
 ### Committing and Pushing to GitHub
 
-Stage all changes. **Include a descriptive commit message clearly stating the changes made.** **Push only to the respective team's branch and NOT to master.** Issue a Pull Request to master only if a module is complete, 100% working and doesn't break anything else. **Biswaranjan Padhy** will resolve any conflicts and merge to master as and when required.
+Stage all changes. **Include a descriptive commit message clearly stating the changes made.** Issue a Pull Request to master only if a module is complete, 100% working and doesn't break anything else. **Biswaranjan Padhy** will resolve any conflicts and merge to master as and when required.
 
 - If you have no experience with Git then follow the quick guide at [GitHowTo](https://githowto.com/)
 
 ## Documentation
 
 - Documentation for the CoreUI Bootstrap Template is hosted at [CoreUI](https://coreui.io/docs/getting-started/introduction/#coreui-admin-template)
-- Documentation for Chart.js is hosted at [Chart.js](https://www.chartjs.org/docs/latest/)
 - Design and Business documents pertaining to this project are located at [Documentation](https://drive.google.com/open?id=1f4cEnPXLHRUnu_AwKlCRpet3rGzvd-_P)
 
 **The ReadME shall be updated with future changes and enhancements**
