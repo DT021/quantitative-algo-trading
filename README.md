@@ -6,6 +6,7 @@ The proposed system helps the people in the stock market business and make it ea
 * [Installation](#installation)
 * [Usage](#usage)
 * [What's included](#whats-included)
+* [System Architecture Overview](#system-architecture-overview)
 * [Contributing](#contributing)
 * [Documentation](#documentation)
 
@@ -89,6 +90,11 @@ quantitative-algo-trading
 ├── package-lock.json
 └── package.json
 ```
+
+## System Architecture Overview
+
+![System Architecture Overview](https://lh3.googleusercontent.com/UyvbMnq5CGPhDkpGEi84e6lARxxLycEBW0QQc1_heO4C_DT45dWa653UL4e5cZHbpOK4PQ_ehY59TJCY8ji8S3qYZ-57Iuc_WL4djkT6ax20haJkeqKLnbM-9wkJda_XkTppHHzvJ5azz_UcFUHGCubn5foTU5OzA7d0n27Ne2J9k2NlPfvld2hp-f5g0lkvAXnIgiP-oxd-1MF5nzjHRIJlS086Q_Pgyp_JyZY0sOiG6BtRhQRWhWvfN5Ni7WAUByVSCToYqsLfGVsA6Dd5dfjvHD06C_nPi2Wg9QCKitXUjlWy3QHrn9Ax5V6MwchCOwEh_ys9D_Q28Rbm1YR7GcejZCHYfzC6_kQIZGcbedzm4GTr1ekJaDxU5c3Vj_yDjEBvQQEMBIjNPzkfe467h4j4dG7M28HLauGcrti97e9Mm_gHy06F3ThvpEpeecitkxktAmzAIwIJXzxCLP1pqFxm76Kjupt5z08bWmSkCxB4ptQ0171wtapibfLw-1PyUyN6Mxq6VnxfkTAacYCNUmFNmKUVrTTzUUeceP4kb6tOM11RLwcbcVWxamAWaiRmyCrCvwPPpIbwNIZx2VZRjMvkgtDdLFAbD2aElHHOaM1hMzl-Vv49Hg7Q8KwuPgjT3iWS0BVBybLk72d99FgXruOKVyqyWxJLe_9WECjqFFYQtyqmWcVsqC7sG1OrO1zZt4uz0qRQazhB0t2y5ODGeDVu83Y611EC_T9yiktcnKEyBnTa8nTkYGA=w2320-h1642-no)
+
 ## Contributing
 
 Edit files only in the dist/ directory. When you run ```npm run serve``` the project will be served on localhost from dist/ with hot reload. i.e any changes made and saved to a file will be visible in browser without having to reload the page. When all changes are stable and nothing seems to be broken, copy entire contents of dist/ into src/ and run ```npm run build``` to build dist files.
