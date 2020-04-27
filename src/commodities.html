@@ -80,18 +80,119 @@
             <li><a href="strategy.html">Strategy</a></li>
             <li><a href="forex.html">Forex</a></li>
             <li><a href="commodities.html">Commodities</a></li>
-             <li><a href="forex_conversion.html">Forex Conversion</a></li>
+            <li><a href="forex_conversion.html">Forex Conversion</a></li>
             <li><a href="aboutus.html">About Us</a></li>
           </ul>
         </div>
       </ul>
     </header>
-    <div class="c-wrapper c-fixed-components">
+    <div class="c-wrapper c-fixed-components" style="align-items: center; width: 100%;">
       <div class="c-body" style="padding-top:15px;">
         <main class="c-main" style="margin-top:95px;">
           <div class="container-fluid">
             <div class="fade-in">
               <!--Main Content-->
+
+              <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="margin:20px;margin-bottom:90px;">
+  <h2 style="position: relative;margin-top: 10px;margin-bottom: 20px;">Commodities and Bonds</h2>
+
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+  {
+  "width": 850,
+  "height": 750,
+  "symbolsGroups": [
+    {
+      "name": "Commodities",
+      "originalName": "Commodities",
+      "symbols": [
+        {
+          "name": "CME_MINI:ES1!",
+          "displayName": "E-Mini S&P"
+        },
+        {
+          "name": "CME:6E1!",
+          "displayName": "Euro"
+        },
+        {
+          "name": "COMEX:GC1!",
+          "displayName": "Gold"
+        },
+        {
+          "name": "NYMEX:CL1!",
+          "displayName": "Crude Oil"
+        },
+        {
+          "name": "NYMEX:NG1!",
+          "displayName": "Natural Gas"
+        },
+        {
+          "name": "CBOT:ZC1!",
+          "displayName": "Corn"
+        },
+        {
+          "name": "CURRENCYCOM:SILVER",
+          "displayName": "Silver"
+        }
+      ]
+    },
+    {
+      "name": "Bonds",
+      "originalName": "Bonds",
+      "symbols": [
+        {
+          "name": "CME:GE1!",
+          "displayName": "Eurodollar"
+        },
+        {
+          "name": "CBOT:ZB1!",
+          "displayName": "T-Bond"
+        },
+        {
+          "name": "CBOT:UB1!",
+          "displayName": "Ultra T-Bond"
+        },
+        {
+          "name": "EUREX:FGBL1!",
+          "displayName": "Euro Bund"
+        },
+        {
+          "name": "EUREX:FBTP1!",
+          "displayName": "Euro BTP"
+        },
+        {
+          "name": "EUREX:FGBM1!",
+          "displayName": "Euro BOBL"
+        }
+      ]
+    }
+  ],
+  "colorTheme": "light",
+  "isTransparent": false,
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="margin:20px;margin-bottom:60px; margin-top: 50px;">
+  <h2 style="position: relative;margin-bottom: 20px;">Cryptocurrency</h2>
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+  {
+  "width": 850,
+  "height": 750,
+  "defaultColumn": "overview",
+  "screener_type": "crypto_mkt",
+  "displayCurrency": "USD",
+  "colorTheme": "light",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
             </div>
           </div>
         </main>
@@ -110,8 +211,9 @@
       <!--[if IE]><!-->
       <script src="vendors/@coreui/icons/js/svgxuse.min.js"></script>
       <!--<![endif]-->
-       
+
     </div>
+
 
 
   </body>

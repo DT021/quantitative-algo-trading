@@ -86,12 +86,120 @@
         </div>
       </ul>
     </header>
-    <div class="c-wrapper c-fixed-components">
+    <div class="c-wrapper c-fixed-components" style="align-items: center; width: 100%;">
       <div class="c-body" style="padding-top:15px;">
         <main class="c-main" style="margin-top:95px;">
           <div class="container-fluid">
             <div class="fade-in">
               <!--Main Content-->
+
+              <!-- TradingView Widget BEGIN -->
+              <div class="tradingview-widget-container" style=" margin:20px;">
+                <h2 style="position: relative;margin-top: 10px;margin-bottom: 20px;">Forex Cross Rates</h2>
+
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async="">
+                  {
+                    "width": "850",
+                    "height": 400,
+                    "currencies": [
+                      "EUR",
+                      "USD",
+                      "JPY",
+                      "GBP",
+                      "CHF",
+                      "AUD",
+                      "CAD",
+                      "NZD",
+                      "CNY",
+                      "INR"
+                    ],
+                    "isTransparent": false,
+                    "colorTheme": "light",
+                    "locale": "en"
+                  }
+                </script>
+              </div>
+              <!-- TradingView Widget END -->
+
+              <!-- TradingView Widget BEGIN -->
+              <div class="tradingview-widget-container" style=" margin:20px; margin-bottom: 100px;">
+                <h2 style="position: relative;margin-top: 100px;margin-bottom: 20px;">Forex Heat Map</h2>
+
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async="">
+                  {
+                    "width": "850",
+                    "height": 400,
+                    "currencies": [
+                      "EUR",
+                      "USD",
+                      "JPY",
+                      "GBP",
+                      "CHF",
+                      "AUD",
+                      "CAD",
+                      "NZD",
+                      "CNY",
+                      "INR"
+                    ],
+                    "isTransparent": false,
+                    "colorTheme": "light",
+                    "locale": "en"
+                  }
+                </script>
+              </div>
+              <!-- TradingView Widget END -->
+              <!-- TradingView Widget BEGIN -->
+              <div class="tradingview-widget-container" style=" margin:20px; margin-bottom: 100px;">
+                <h2 style="position: relative;margin-top: 100px;margin-bottom: 20px;">Forex Rates</h2>
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async="">
+                  {
+                    "width": 850,
+                    "height": 450,
+                    "symbolsGroups": [{
+                      "name": "Forex",
+                      "originalName": "Forex",
+                      "symbols": [{
+                          "name": "FX:EURUSD"
+                        },
+                        {
+                          "name": "FX:GBPUSD"
+                        },
+                        {
+                          "name": "FX:USDJPY"
+                        },
+                        {
+                          "name": "FX:USDCHF"
+                        },
+                        {
+                          "name": "FX:AUDUSD"
+                        },
+                        {
+                          "name": "FX:USDCAD"
+                        },
+                        {
+                          "name": "FX_IDC:INREUR"
+                        },
+                        {
+                          "name": "FX_IDC:INRCNY"
+                        },
+                        {
+                          "name": "FX_IDC:INRAED"
+                        },
+                        {
+                          "name": "FX_IDC:INRUSD"
+                        }
+                      ]
+                    }],
+                    "colorTheme": "light",
+                    "isTransparent": false,
+                    "locale": "en"
+                  }
+                </script>
+              </div>
+              <!-- TradingView Widget END -->
             </div>
           </div>
         </main>
@@ -112,6 +220,8 @@
       <!--<![endif]-->
 
     </div>
+
+
 
 
 
