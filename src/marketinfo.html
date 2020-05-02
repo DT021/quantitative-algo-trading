@@ -5,11 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-    <meta name="author" content="Łukasz Holeczek">
-    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
     <title>Quantitative Algo-Trading</title>
-   
+
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -77,8 +74,8 @@
       <!-- TradingView Widget END -->
       <ul class="c-header-nav ml-auto mr-4">
         <div data-role="appbar" data-expand-point="md" style="margin-top:75px;">
-          <a href="index.html" class="brand no-hover" style="font-family: 'Roboto', sans-serif;">Quantitative
-            Algo-Trading</a>
+          <a href="index.html" class="brand no-hover" style="font-family: 'Roboto', sans-serif;">            <img src="assets/logo.png" alt="QAT" height="100%" width="100%">
+</a>
           <ul class="app-bar-menu">
             <li><a href="marketnews.html">News</a></li>
             <li><a href="marketinfo.html">Market Info</a></li>
@@ -93,14 +90,14 @@
     </header>
     <div class="c-wrapper c-fixed-components">
       <div class="c-body" style="padding-top:15px;">
-        <main class="c-main" style="margin-top:95px;">
+        <main class="c-main" style="margin-top:95px; margin-bottom: 70px;">
           <div class="container-fluid">
             <div class="fade-in">
               <!--Main Content-->
 
 
               <!-- TradingView Widget BEGIN -->
-              <div class="tradingview-widget-container" style="width: 85%;height: 70vh; margin-left: 7%;">
+              <div class="tradingview-widget-container" style="width: 100%;height: 70vh; ">
                 <h2 style="position: relative;margin-top: 10px;margin-bottom: 10px;">Real-time company data</h2>
                 <div id="tradingview_13337"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
@@ -127,7 +124,7 @@
 
               <div class="overview">
                 <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container" style="margin: 90px;">
+                <div class="tradingview-widget-container" style="margin-top: 90px;">
                   <h2 style="position: relative;margin-top: 10px;margin-bottom: 10px;">Stock Market Overview</h2>
 
                   <div class="tradingview-widget-container__widget"></div>
@@ -140,7 +137,7 @@
                       "locale": "en",
                       "largeChartUrl": "",
                       "isTransparent": false,
-                      "width": "400",
+                      "width": "500",
                       "height": "660",
                       "plotLineColorGrowing": "rgba(33, 150, 243, 1)",
                       "plotLineColorFalling": "rgba(33, 150, 243, 1)",
@@ -155,7 +152,7 @@
                 <!-- TradingView Widget END -->
 
                 <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container" style="margin-top: 90px;">
+                <div class="tradingview-widget-container" style="margin-top: 90px; margin-left: 20px;">
                   <h2 style="position: relative;margin-top: 10px;margin-bottom: 10px;">Indices</h2>
                   <div class="tradingview-widget-container__widget"></div>
                   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async="">
@@ -208,7 +205,7 @@
                 <!-- TradingView Widget END -->
               </div>
               <!-- TradingView Widget BEGIN -->
-              <div class="tradingview-widget-container" style="margin: 90px;">
+              <div class="tradingview-widget-container" style="margin-top: 90px;">
                 <h2 style="position: relative;margin-top: 10px;margin-bottom: 20px;">Economic Calendar</h2>
 
                 <div class="tradingview-widget-container__widget"></div>
@@ -216,7 +213,7 @@
                   {
                     "colorTheme": "light",
                     "isTransparent": false,
-                    "width": "800",
+                    "width": "100%",
                     "height": "600",
                     "locale": "en",
                     "importanceFilter": "0,1"
@@ -227,13 +224,20 @@
             </div>
           </div>
         </main>
+        <footer class="c-footer">
+          <div>Quantitative Algo-Trading © 2020</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="ml-auto" style="float: left;">Powered by&nbsp;<a href="https://in.tradingview.com/">TradingView</a>
+          </div>
+        </footer>
       </div>
       <!-- middle section Ended -->
 
       <!-- CoreUI and necessary plugins-->
       <script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
-    
+
     </div>
+
+
 
 
 
