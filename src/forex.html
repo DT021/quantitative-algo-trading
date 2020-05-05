@@ -98,6 +98,8 @@
       button:focus {
         outline: 0;
       }
+
+
     </style>
   </head>
 
@@ -135,7 +137,7 @@
             "displayMode": "regular",
             "locale": "in"
           }
-  
+
         </script>
       </div>
       <ul class="c-header-nav ml-auto mr-4">
@@ -245,7 +247,7 @@
                               <option value="VND">VND</option>
                               <option value="ZAR">ZAR</option>
                             </select>
-                            <input class="form-control form-control-lg" step="1" id="from_ammount" value="1">
+                            <input type="number" pattern="[0-9]*" class="form-control form-control-lg" step="1" id="from_ammount" value="1">
                           </div>
                         </div>
                       </div>
@@ -318,7 +320,7 @@
                               <option value="VND">VND</option>
                               <option value="ZAR">ZAR</option>
                             </select>
-                            <input class="form-control form-control-lg" id="to_ammount">
+                            <input type="number" class="form-control form-control-lg" id="to_ammount" readonly>
                           </div>
                         </div>
                       </div>
@@ -452,10 +454,8 @@
                 }
               });
               result = await response.json();
-              console.log(result);
               const rate = result['Realtime Currency Exchange Rate']['5. Exchange Rate'];
-              console.log(rate);
-              rateEl.innerText = `1 ${from_currency} = ${rate} ${to_currency}`
+              rateEl.innerText = ` ${from_currency} = ${rate} ${to_currency}`
               to_ammountEl.value = (from_ammountEl.value * rate).toFixed(2);
             }
             calculate();
