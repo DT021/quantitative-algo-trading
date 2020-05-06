@@ -1,2 +1,6 @@
 node_modules
 dist
+public
+.firebaserc
+firebase.json
+.firebase
