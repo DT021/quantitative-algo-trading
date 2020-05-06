@@ -1,369 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Quantitative Algo-Trading</title>
 
-<head>
-  <base href="./">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <title>Quantitative Algo-Trading</title>
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.14.2/firebase-app.js"></script>
 
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
        https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css"
-    integrity="sha256-CuUPKpitgFmSNQuPDL5cEfPOOJT/+bwUlhfumDJ9CI4=" crossorigin="anonymous">
-  <!-- Main styles for this application-->
-  <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&amp;display=swap" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-</head>
+    <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css" integrity="sha256-CuUPKpitgFmSNQuPDL5cEfPOOJT/+bwUlhfumDJ9CI4=" crossorigin="anonymous">
+    <!-- Main styles for this application-->
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&amp;display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
 
-<body class="c-app" style="font-family: Avenir, Helvetica, Arial, sans-serif;">
-  <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
-    <!-- TradingView Widget BEGIN -->
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
-        async>
-        {
-          "symbols": [{
-              "description": "Sensex",
-              "proName": "BSE:SENSEX"
-            },
-            {
-              "description": "USD/INR",
-              "proName": "OANDA:USDINR"
-            },
-            {
-              "description": "Brent Crude Oil",
-              "proName": "TVC:UKOIL"
-            },
-            {
-              "description": "S&P 500",
-              "proName": "FOREXCOM:SPXUSD"
-            },
-            {
-              "description": "Reliance",
-              "proName": "BSE:RELIANCE"
-            }
-          ],
-          "colorTheme": "light",
-          "isTransparent": false,
-          "displayMode": "regular",
-          "locale": "in"
-        }
-
-      </script>
-    </div>
-    <ul class="c-header-nav ml-auto mr-4">
-      <div data-role="appbar" data-expand-point="md" style="margin-top:50px;background-color:white !important;">
-        <a href="index.html" class="brand no-hover" style="font-family: 'Roboto', sans-serif;">
-          <img src="assets/logo.png" alt="QAT" height="100%" width="100%" /></a>
-        <ul class="app-bar-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="marketnews.html">News</a></li>
-          <li><a href="marketinfo.html"> Market Data</a></li>
-          <li><a href="strategy.html">Strategy</a></li>
-          <li><a href="forex.html">Forex</a></li>
-          <li><a href="aboutus.html">About Us</a></li>
-        </ul>
+  <body class="c-app" style="font-family: Avenir, Helvetica, Arial, sans-serif;">
+    <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async="">
+          {
+            "symbols": [{
+                "description": "Sensex",
+                "proName": "BSE:SENSEX"
+              },
+              {
+                "description": "USD/INR",
+                "proName": "OANDA:USDINR"
+              },
+              {
+                "description": "Brent Crude Oil",
+                "proName": "TVC:UKOIL"
+              },
+              {
+                "description": "S&P 500",
+                "proName": "FOREXCOM:SPXUSD"
+              },
+              {
+                "description": "Reliance",
+                "proName": "BSE:RELIANCE"
+              }
+            ],
+            "colorTheme": "light",
+            "isTransparent": false,
+            "displayMode": "regular",
+            "locale": "in"
+          }
+        </script>
       </div>
-    </ul>
-  </header>
-  <div class="c-wrapper c-fixed-components">
-    <div class="c-body" style="padding-top:15px;">
-      <main class="c-main" style="margin-top:95px; margin-bottom: 70px;">
-        <div class="container-fluid">
-          <div class="fade-in">
+      <ul class="c-header-nav ml-auto mr-4">
+        <div data-role="appbar" data-expand-point="md" style="margin-top:50px;background-color:white !important;">
+          <a href="index.html" class="brand no-hover" style="font-family: 'Roboto', sans-serif;">
+            <img src="assets/logo.png" alt="QAT" height="100%" width="100%"></a>
+          <ul class="app-bar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketnews.html">News</a></li>
+            <li><a href="marketinfo.html"> Market Data</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="forex.html">Forex</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+          </ul>
+        </div>
+      </ul>
+    </header>
+    <div class="c-wrapper c-fixed-components">
+      <div class="c-body" style="padding-top:15px;">
+        <main class="c-main" style="margin-top:95px; margin-bottom: 70px;">
+          <div class="container-fluid">
+            <div class="fade-in">
 
-            <div style="display:flex; flex-direction: row; justify-content: space-around; align-items: center">
-              <div class="tradingview-widget-container">
-                <h2>Stock</h2>
+              <div style="display:flex; flex-direction: row; justify-content: space-around; align-items: center">
+                <div class="tradingview-widget-container">
+                  <h2>Stock</h2>
+                  <div class="tradingview-widget-container__widget"></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async="">
+                    {
+                      "title": "Stocks",
+                      "tabs": [{
+                          "title": "Financial",
+                          "symbols": [{
+                              "s": "NYSE:JPM",
+                              "d": "Jpmorgan Chase & Co"
+                            },
+                            {
+                              "s": "NYSE:WFC",
+                              "d": "Wells Fargo Co New"
+                            },
+                            {
+                              "s": "NYSE:BAC",
+                              "d": "Bank Amer Corp"
+                            },
+                            {
+                              "s": "NYSE:HSBC",
+                              "d": "Hsbc Hldgs Plc"
+                            },
+                            {
+                              "s": "NYSE:C",
+                              "d": "Citigroup Inc"
+                            },
+                            {
+                              "s": "NYSE:MA",
+                              "d": "Mastercard Incorporated"
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Technology",
+                          "symbols": [{
+                              "s": "NASDAQ:AAPL",
+                              "d": "Apple"
+                            },
+                            {
+                              "s": "NASDAQ:GOOGL",
+                              "d": "Google Inc"
+                            },
+                            {
+                              "s": "NASDAQ:MSFT",
+                              "d": "Microsoft Corp"
+                            },
+                            {
+                              "s": "NASDAQ:FB",
+                              "d": "Facebook Inc"
+                            },
+                            {
+                              "s": "NYSE:ORCL",
+                              "d": "Oracle Corp"
+                            },
+                            {
+                              "s": "NASDAQ:INTC",
+                              "d": "Intel Corp"
+                            }
+                          ]
+                        },
+                        {
+                          "title": "Services",
+                          "symbols": [{
+                              "s": "NASDAQ:AMZN",
+                              "d": "Amazon Com Inc"
+                            },
+                            {
+                              "s": "NYSE:BABA",
+                              "d": "Alibaba Group Hldg Ltd"
+                            },
+                            {
+                              "s": "NYSE:T",
+                              "d": "At&t Inc"
+                            },
+                            {
+                              "s": "NYSE:WMT",
+                              "d": "Wal-mart Stores Inc"
+                            },
+                            {
+                              "s": "NYSE:CHL",
+                              "d": "China Mobile Limited"
+                            },
+                            {
+                              "s": "NYSE:V",
+                              "d": "Visa Inc"
+                            }
+                          ]
+                        }
+                      ],
+                      "width": "100%",
+                      "height": 660,
+                      "showChart": true,
+                      "locale": "en",
+                      "plotLineColorGrowing": "rgba(33, 150, 243, 1)",
+                      "plotLineColorFalling": "rgba(33, 150, 243, 1)",
+                      "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
+                      "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
+                      "gridLineColor": "#F0F3FA",
+                      "scaleFontColor": "rgba(120, 123, 134, 1)",
+                      "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
+                      "colorTheme": "light"
+                    }
+                  </script>
+                </div>
+                <div class="tradingview-widget-container" style="padding-left: 10px;">
+                  <h2>Indices</h2>
+                  <div class="tradingview-widget-container__widget"></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async="">
+                    {
+                      "width": "100%",
+                      "height": 660,
+                      "symbolsGroups": [{
+                        "name": "Indices",
+                        "originalName": "Indices",
+                        "symbols": [{
+                            "name": "FOREXCOM:SPXUSD",
+                            "displayName": "S&P 500"
+                          },
+                          {
+                            "name": "FOREXCOM:NSXUSD",
+                            "displayName": "Nasdaq 100"
+                          },
+                          {
+                            "name": "FOREXCOM:DJI",
+                            "displayName": "Dow 30"
+                          },
+                          {
+                            "name": "INDEX:NKY",
+                            "displayName": "Nikkei 225"
+                          },
+                          {
+                            "name": "INDEX:DEU30",
+                            "displayName": "DAX Index"
+                          },
+                          {
+                            "name": "FOREXCOM:UKXGBP",
+                            "displayName": "FTSE 100"
+                          },
+                          {
+                            "name": "BSE:SENSEX",
+                            "displayName": "BSE SENSEX"
+                          },
+                          {
+                            "name": "NSE:NIFTY",
+                            "displayName": "NIFTY 50"
+                          }
+                        ]
+                      }],
+                      "colorTheme": "light",
+                      "isTransparent": false,
+                      "locale": "en"
+                    }
+                  </script>
+                </div>
+              </div>
+
+
+              <div style="display:flex; flex-direction: row; justify-content: space-around; align-items: center; padding-top:65px; height: 660px;">
+                <div class="tradingview-widget-container">
+                  <h2>Stock Screener</h2>
+                  <div class="tradingview-widget-container__widget"></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async="">
+                    {
+                      "width": "100%",
+                      "height": "100%",
+                      "defaultColumn": "overview",
+                      "defaultScreen": "most_capitalized",
+                      "market": "india",
+                      "showToolbar": true,
+                      "colorTheme": "light",
+                      "locale": "en"
+                    }
+                  </script>
+                </div>
+              </div>
+              <div class="tradingview-widget-container" style=" padding-top:65px;">
+                <h2>Commodities and Bonds</h2>
                 <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript"
-                  src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async="">
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async="">
                   {
-                    "title": "Stocks",
-                    "tabs": [{
-                        "title": "Financial",
+                    "width": "100%",
+                    "height": 750,
+                    "symbolsGroups": [{
+                        "name": "Commodities",
+                        "originalName": "Commodities",
                         "symbols": [{
-                            "s": "NYSE:JPM",
-                            "d": "Jpmorgan Chase & Co"
+                            "name": "CME_MINI:ES1!",
+                            "displayName": "E-Mini S&P"
                           },
                           {
-                            "s": "NYSE:WFC",
-                            "d": "Wells Fargo Co New"
+                            "name": "CME:6E1!",
+                            "displayName": "Euro"
                           },
                           {
-                            "s": "NYSE:BAC",
-                            "d": "Bank Amer Corp"
+                            "name": "COMEX:GC1!",
+                            "displayName": "Gold"
                           },
                           {
-                            "s": "NYSE:HSBC",
-                            "d": "Hsbc Hldgs Plc"
+                            "name": "NYMEX:CL1!",
+                            "displayName": "Crude Oil"
                           },
                           {
-                            "s": "NYSE:C",
-                            "d": "Citigroup Inc"
+                            "name": "NYMEX:NG1!",
+                            "displayName": "Natural Gas"
                           },
                           {
-                            "s": "NYSE:MA",
-                            "d": "Mastercard Incorporated"
+                            "name": "CBOT:ZC1!",
+                            "displayName": "Corn"
+                          },
+                          {
+                            "name": "CURRENCYCOM:SILVER",
+                            "displayName": "Silver"
                           }
                         ]
                       },
                       {
-                        "title": "Technology",
+                        "name": "Bonds",
+                        "originalName": "Bonds",
                         "symbols": [{
-                            "s": "NASDAQ:AAPL",
-                            "d": "Apple"
+                            "name": "CME:GE1!",
+                            "displayName": "Eurodollar"
                           },
                           {
-                            "s": "NASDAQ:GOOGL",
-                            "d": "Google Inc"
+                            "name": "CBOT:ZB1!",
+                            "displayName": "T-Bond"
                           },
                           {
-                            "s": "NASDAQ:MSFT",
-                            "d": "Microsoft Corp"
+                            "name": "CBOT:UB1!",
+                            "displayName": "Ultra T-Bond"
                           },
                           {
-                            "s": "NASDAQ:FB",
-                            "d": "Facebook Inc"
+                            "name": "EUREX:FGBL1!",
+                            "displayName": "Euro Bund"
                           },
                           {
-                            "s": "NYSE:ORCL",
-                            "d": "Oracle Corp"
+                            "name": "EUREX:FBTP1!",
+                            "displayName": "Euro BTP"
                           },
                           {
-                            "s": "NASDAQ:INTC",
-                            "d": "Intel Corp"
-                          }
-                        ]
-                      },
-                      {
-                        "title": "Services",
-                        "symbols": [{
-                            "s": "NASDAQ:AMZN",
-                            "d": "Amazon Com Inc"
-                          },
-                          {
-                            "s": "NYSE:BABA",
-                            "d": "Alibaba Group Hldg Ltd"
-                          },
-                          {
-                            "s": "NYSE:T",
-                            "d": "At&t Inc"
-                          },
-                          {
-                            "s": "NYSE:WMT",
-                            "d": "Wal-mart Stores Inc"
-                          },
-                          {
-                            "s": "NYSE:CHL",
-                            "d": "China Mobile Limited"
-                          },
-                          {
-                            "s": "NYSE:V",
-                            "d": "Visa Inc"
+                            "name": "EUREX:FGBM1!",
+                            "displayName": "Euro BOBL"
                           }
                         ]
                       }
                     ],
-                    "width": "100%",
-                    "height": 660,
-                    "showChart": true,
-                    "locale": "en",
-                    "plotLineColorGrowing": "rgba(33, 150, 243, 1)",
-                    "plotLineColorFalling": "rgba(33, 150, 243, 1)",
-                    "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
-                    "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
-                    "gridLineColor": "#F0F3FA",
-                    "scaleFontColor": "rgba(120, 123, 134, 1)",
-                    "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
-                    "colorTheme": "light"
-                  }
-
-                </script>
-              </div>
-              <div class="tradingview-widget-container" style="padding-left: 10px;">
-                <h2>Indices</h2>
-                <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript"
-                  src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async="">
-                  {
-                    "width": "100%",
-                    "height": 660,
-                    "symbolsGroups": [{
-                      "name": "Indices",
-                      "originalName": "Indices",
-                      "symbols": [{
-                          "name": "FOREXCOM:SPXUSD",
-                          "displayName": "S&P 500"
-                        },
-                        {
-                          "name": "FOREXCOM:NSXUSD",
-                          "displayName": "Nasdaq 100"
-                        },
-                        {
-                          "name": "FOREXCOM:DJI",
-                          "displayName": "Dow 30"
-                        },
-                        {
-                          "name": "INDEX:NKY",
-                          "displayName": "Nikkei 225"
-                        },
-                        {
-                          "name": "INDEX:DEU30",
-                          "displayName": "DAX Index"
-                        },
-                        {
-                          "name": "FOREXCOM:UKXGBP",
-                          "displayName": "FTSE 100"
-                        },
-                        {
-                          "name": "BSE:SENSEX",
-                          "displayName": "BSE SENSEX"
-                        },
-                        {
-                          "name": "NSE:NIFTY",
-                          "displayName": "NIFTY 50"
-                        }
-                      ]
-                    }],
                     "colorTheme": "light",
                     "isTransparent": false,
                     "locale": "en"
                   }
-
                 </script>
               </div>
+
+
             </div>
-
-
-            <div
-              style="display:flex; flex-direction: row; justify-content: space-around; align-items: center; padding-top:65px; height: 660px;">
-              <div class="tradingview-widget-container">
-                <h2>Stock Screener</h2>
-                <div class="tradingview-widget-container__widget"></div>
-                <script type="text/javascript"
-                  src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async="">
-                  {
-                    "width": "100%",
-                    "height": "100%",
-                    "defaultColumn": "overview",
-                    "defaultScreen": "most_capitalized",
-                    "market": "india",
-                    "showToolbar": true,
-                    "colorTheme": "light",
-                    "locale": "en"
-                  }
-
-                </script>
-              </div>
-            </div>
-            <div class="tradingview-widget-container" style=" padding-top:65px;">
-              <h2>Commodities and Bonds</h2>
-              <div class="tradingview-widget-container__widget"></div>
-              <script type="text/javascript"
-                src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async="">
-                {
-                  "width": "100%",
-                  "height": 750,
-                  "symbolsGroups": [{
-                      "name": "Commodities",
-                      "originalName": "Commodities",
-                      "symbols": [{
-                          "name": "CME_MINI:ES1!",
-                          "displayName": "E-Mini S&P"
-                        },
-                        {
-                          "name": "CME:6E1!",
-                          "displayName": "Euro"
-                        },
-                        {
-                          "name": "COMEX:GC1!",
-                          "displayName": "Gold"
-                        },
-                        {
-                          "name": "NYMEX:CL1!",
-                          "displayName": "Crude Oil"
-                        },
-                        {
-                          "name": "NYMEX:NG1!",
-                          "displayName": "Natural Gas"
-                        },
-                        {
-                          "name": "CBOT:ZC1!",
-                          "displayName": "Corn"
-                        },
-                        {
-                          "name": "CURRENCYCOM:SILVER",
-                          "displayName": "Silver"
-                        }
-                      ]
-                    },
-                    {
-                      "name": "Bonds",
-                      "originalName": "Bonds",
-                      "symbols": [{
-                          "name": "CME:GE1!",
-                          "displayName": "Eurodollar"
-                        },
-                        {
-                          "name": "CBOT:ZB1!",
-                          "displayName": "T-Bond"
-                        },
-                        {
-                          "name": "CBOT:UB1!",
-                          "displayName": "Ultra T-Bond"
-                        },
-                        {
-                          "name": "EUREX:FGBL1!",
-                          "displayName": "Euro Bund"
-                        },
-                        {
-                          "name": "EUREX:FBTP1!",
-                          "displayName": "Euro BTP"
-                        },
-                        {
-                          "name": "EUREX:FGBM1!",
-                          "displayName": "Euro BOBL"
-                        }
-                      ]
-                    }
-                  ],
-                  "colorTheme": "light",
-                  "isTransparent": false,
-                  "locale": "en"
-                }
-
-              </script>
-            </div>
-
-
           </div>
-        </div>
-      </main>
-      <footer class="c-footer" style="margin-top: 45px;">
-        <div>Quantitative Algo-Trading © 2020</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div class="ml-auto" style="float: left;">Powered by&nbsp;<a href="https://in.tradingview.com/">TradingView</a>
-        </div>
-      </footer>
+        </main>
+        <footer class="c-footer" style="margin-top: 45px;">
+          <div>Quantitative Algo-Trading © 2020</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="ml-auto" style="float: left;">Powered by&nbsp;<a href="https://in.tradingview.com/">TradingView</a>
+          </div>
+        </footer>
+      </div>
+      <!-- middle section Ended -->
+
+      <!-- CoreUI and necessary plugins-->
+      <script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
+
     </div>
-    <!-- middle section Ended -->
-
-    <!-- CoreUI and necessary plugins-->
-    <script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
-
-  </div>
 
 
 
@@ -375,6 +362,8 @@
 
 
 
-</body>
 
+
+
+  </body>
 </html>
