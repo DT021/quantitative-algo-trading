@@ -1,161 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="The Right Way to Invest">
+    <meta name="author" content="Octal++">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>Quantitative Algo-Trading</title>
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script defer src="./js/init-firebase.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css" integrity="sha256-CuUPKpitgFmSNQuPDL5cEfPOOJT/+bwUlhfumDJ9CI4=" crossorigin="anonymous">
+    <!-- Main styles for this application-->
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&amp;display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
 
-<head>
-  <base href="./">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-  <meta name="description" content="The Right Way to Invest">
-  <meta name="author" content="Octal++">
-  <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-  <title>Quantitative Algo-Trading</title>
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css"
-    integrity="sha256-CuUPKpitgFmSNQuPDL5cEfPOOJT/+bwUlhfumDJ9CI4=" crossorigin="anonymous">
-  <!-- Main styles for this application-->
-  <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&amp;display=swap" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-</head>
-
-<body class="c-app" style="font-family: Avenir, Helvetica, Arial, sans-serif;">
-  <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
-    <!-- TradingView Widget BEGIN -->
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
-        async="">
-        {
-          "symbols": [{
-              "description": "Sensex",
-              "proName": "BSE:SENSEX"
-            },
-            {
-              "description": "USD/INR",
-              "proName": "OANDA:USDINR"
-            },
-            {
-              "description": "Brent Crude Oil",
-              "proName": "TVC:UKOIL"
-            },
-            {
-              "description": "S&P 500",
-              "proName": "FOREXCOM:SPXUSD"
-            },
-            {
-              "description": "Reliance",
-              "proName": "BSE:RELIANCE"
-            }
-          ],
-          "colorTheme": "light",
-          "isTransparent": false,
-          "displayMode": "regular",
-          "locale": "in"
-        }
-
-      </script>
-    </div>
-    <ul class="c-header-nav ml-auto mr-4">
-      <div data-role="appbar" data-expand-point="md" style="margin-top:50px;background-color:white !important;">
-        <a href="index.html" class="brand no-hover" style="font-family: 'Roboto', sans-serif;">
-          <img src="assets/logo.png" alt="QAT" height="100%" width="100%"></a>
-        <ul class="app-bar-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="marketnews.html">News</a></li>
-          <li><a href="marketinfo.html"> Market Data</a></li>
-          <li><a href="strategy.html">Strategy</a></li>
-          <li><a href="forex.html">Forex</a></li>
-          <li><a href="aboutus.html">About Us</a></li>
-        </ul>
+  <body class="c-app" style="font-family: Avenir, Helvetica, Arial, sans-serif;">
+    <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async="">
+          {
+            "symbols": [{
+                "description": "Sensex",
+                "proName": "BSE:SENSEX"
+              },
+              {
+                "description": "USD/INR",
+                "proName": "OANDA:USDINR"
+              },
+              {
+                "description": "Brent Crude Oil",
+                "proName": "TVC:UKOIL"
+              },
+              {
+                "description": "S&P 500",
+                "proName": "FOREXCOM:SPXUSD"
+              },
+              {
+                "description": "Reliance",
+                "proName": "BSE:RELIANCE"
+              }
+            ],
+            "colorTheme": "light",
+            "isTransparent": false,
+            "displayMode": "regular",
+            "locale": "in"
+          }
+        </script>
       </div>
-    </ul>
-  </header>
-  <div class="c-wrapper c-fixed-components">
-    <div class="c-body" style="padding-top:15px;">
-      <main class="c-main" style="margin-top:95px;">
-        <div class="container-fluid">
-          <div class="fade-in">
-            <h2>Strategy Development</h2>
-            <p>Select the Symbol and Time Interval that you want to derive a strategy for, then select an indicator
-              from the Fx - dialog box to see the predicted trend</p>
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container" style="width: 100%;height: 70vh; padding-top:20px;">
-              <div id="tradingview_13337"></div>
-              <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-              <script type="text/javascript">
-                new TradingView.widget({
-                  "symbol": "BSE:RELIANCE",
-                  "autosize": true,
-                  "interval": "D",
-                  "timezone": "Asia/Kolkata",
-                  "theme": "light",
-                  "style": "3",
-                  "locale": "en",
-                  "toolbar_bg": "#f1f3f6",
-                  "enable_publishing": false,
-                  "save_image": false,
-                  "allow_symbol_change": true,
-                  "details": true,
-                  "container_id": "tradingview_8b56a"
-                });
-
-              </script>
-            </div>
-            <!-- TradingView Widget END -->
-            <!-- TradingView Widget BEGIN -->
-            <h2 style="padding-top:45px;">Technical Analysis Tool</h2>
-            <p>The technical analysis gauge lets you see the summary based on the most populat techinal indicators - Moving Averages, Oscillators and Pivots, at a quick glance. You no longer have to apply multiple indicators to analyze a financial instrument.</p>
-            <div style="display:flex; flex-direction: row; justify-content: space-around; align-items: center; padding-top:25px;">
-              <div class="tradingview-widget-container">
-              
-              <div class="tradingview-widget-container__widget" style="height:500px !important;"></div>
-              <script type="text/javascript"
-                src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
-                {
-                  "interval": "1D",
-                  "width": 700,
-                  "isTransparent": false,
-                  "height": 500,
-                  "symbol": "BSE:RELIANCE",
-                  "showIntervalTabs": true,
-                  "locale": "in",
-                  "colorTheme": "light"
-                }
-
-              </script>
+      <ul class="c-header-nav ml-auto mr-4">
+        <div data-role="appbar" data-expand-point="md" style="margin-top:50px;background-color:white !important;">
+          <a href="index.html" class="brand no-hover" style="font-family: 'Roboto', sans-serif;">
+            <img src="assets/logo.png" alt="QAT" height="100%" width="100%"></a>
+          <ul class="app-bar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="marketnews.html">News</a></li>
+            <li><a href="marketinfo.html"> Market Data</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="forex.html">Forex</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+          </ul>
+        </div>
+      </ul>
+    </header>
+    <div class="c-wrapper c-fixed-components">
+      <div class="c-body" style="padding-top:15px;">
+        <main class="c-main" style="margin-top:95px;">
+          <div class="container-fluid">
+            <div class="fade-in">
+              <h2>Strategy Development</h2>
+              <p>Select the Symbol and Time Interval that you want to derive a strategy for, then select an indicator
+                from the Fx - dialog box to see the predicted trend</p>
+              <!-- TradingView Widget BEGIN -->
+              <div class="tradingview-widget-container" style="width: 100%;height: 70vh; padding-top:20px;">
+                <div id="tradingview_13337"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script type="text/javascript">
+                  new TradingView.widget({
+                    "symbol": "BSE:RELIANCE",
+                    "autosize": true,
+                    "interval": "D",
+                    "timezone": "Asia/Kolkata",
+                    "theme": "light",
+                    "style": "3",
+                    "locale": "en",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "save_image": false,
+                    "allow_symbol_change": true,
+                    "details": true,
+                    "container_id": "tradingview_8b56a"
+                  });
+                </script>
               </div>
+              <!-- TradingView Widget END -->
+              <!-- TradingView Widget BEGIN -->
+              <h2 style="padding-top:45px;">Technical Analysis Tool</h2>
+              <p>The technical analysis gauge lets you see the summary based on the most populat techinal indicators - Moving Averages, Oscillators and Pivots, at a quick glance. You no longer have to apply multiple indicators to analyze a financial instrument.</p>
+              <div style="display:flex; flex-direction: row; justify-content: space-around; align-items: center; padding-top:25px;">
+                <div class="tradingview-widget-container">
+
+                  <div class="tradingview-widget-container__widget" style="height:500px !important;"></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async="">
+                    {
+                      "interval": "1D",
+                      "width": 700,
+                      "isTransparent": false,
+                      "height": 500,
+                      "symbol": "BSE:RELIANCE",
+                      "showIntervalTabs": true,
+                      "locale": "in",
+                      "colorTheme": "light"
+                    }
+                  </script>
+                </div>
+              </div>
+
+              <!-- TradingView Widget END -->
+
             </div>
-            
-            <!-- TradingView Widget END -->
-
           </div>
-        </div>
-      </main>
-      <footer class="c-footer" style="margin-top: 65px;">
-        <div>Quantitative Algo-Trading © 2020</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div class="ml-auto" style="float: left;">Powered by&nbsp;<a href="https://in.tradingview.com/">TradingView</a>
-        </div>
-      </footer>
+        </main>
+        <footer class="c-footer" style="margin-top: 65px;">
+          <div>Quantitative Algo-Trading © 2020</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="ml-auto" style="float: left;">Powered by&nbsp;<a href="https://in.tradingview.com/">TradingView</a>
+          </div>
+        </footer>
+      </div>
+      <!-- middle section Ended -->
+
+      <!-- CoreUI and necessary plugins-->
+      <script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
+
     </div>
-    <!-- middle section Ended -->
-
-    <!-- CoreUI and necessary plugins-->
-    <script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
-
-  </div>
 
 
 
 
-</body>
 
+
+
+  </body>
 </html>
