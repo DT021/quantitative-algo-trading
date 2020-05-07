@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Quantitative Algo-Trading</title>
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css" integrity="sha256-CuUPKpitgFmSNQuPDL5cEfPOOJT/+bwUlhfumDJ9CI4=" crossorigin="anonymous">
+  <!-- Main styles for this application-->
+  
+  <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&amp;display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  </head>
+
+<body class="c-app" style="font-family: Avenir, Helvetica, Arial, sans-serif;">
+  <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async>
+        {
+          "symbols": [{
+              "description": "Sensex",
+              "proName": "BSE:SENSEX"
+            },
+            {
+              "description": "USD/INR",
+              "proName": "OANDA:USDINR"
+            },
+            {
+              "description": "Brent Crude Oil",
+              "proName": "TVC:UKOIL"
+            },
+            {
+              "description": "S&P 500",
+              "proName": "FOREXCOM:SPXUSD"
+            },
+            {
+              "description": "Reliance",
+              "proName": "BSE:RELIANCE"
+            }
+          ],
+          "colorTheme": "light",
+          "isTransparent": false,
+          "displayMode": "regular",
+          "locale": "in"
+        }
+
+      </script>
+    </div>
+    <ul class="c-header-nav ml-auto mr-4">
+      <div data-role="appbar" data-expand-point="md" style="margin-top:50px;background-color:white !important;">
+        <a href="index.html" class="brand no-hover" style="font-family: 'Roboto', sans-serif;">
+          <img src="assets/logo.png" alt="QAT" height="100%" width="100%" /></a>
+        <ul class="app-bar-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="marketnews.html">News</a></li>
+          <li><a href="marketinfo.html"> Market Data</a></li>
+          <li><a href="strategy.html">Strategy</a></li>
+          <li><a href="forex.html">Forex</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+      </div>
+    </ul>
+  </header>
+    <div class="c-body" style="padding-top:40px; align-content: center; margin:auto;">
+        <main class="c-main"  style="margin-top:50px;">
+          <div class="container-fluid ">
+            <div class="fade-in">
+              <div class="row">
+                
+                  <div class="card">   
+                    <div class="card-body">
+                      <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                      <div class="row">
+                        <div class=" col-md-6">
+                          <label class="col-md-6 col-form-label" for="text-input"><strong>Name</strong></label>
+                          <div class="col-md-12">
+                            <input class="form-control" id="text-input" type="text" name="text-input" placeholder="Enter Name">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <label class="col-md-6 col-form-label" for="email-input"><strong>Email</strong></label>
+                          <div class="col-md-12">
+                            <input class="form-control" id="email-input" type="email" name="email-input" placeholder="Enter Email" autocomplete="email">
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                        <div class=" row">
+                          <div class="col-md-12">
+                         
+                          <label class="col-md-6 col-form-label" for="text-input"><strong>Message</strong></label>
+                          <div class="col-md-12">
+                            <textarea class="form-control" id="textarea-input" name="textarea-input" rows="9" placeholder="Enter Message"></textarea>
+                          </div> 
+                      </div>
+                    </div>
+                      </form>
+                    </div>
+                    <div class="card-footer" >
+                      <button class="btn btn-sm btn-primary" type="submit"> Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
+        </main>
+        <footer class="c-footer" style="margin-top: 65px;">
+          <div>Quantitative Algo-Trading © 2020</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="ml-auto" style="float: left;">Powered by&nbsp;<a href="https://in.tradingview.com/">TradingView</a>
+          </div>
+        </footer>
+      </div>
+   <script src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
+   </body>
+</html>
