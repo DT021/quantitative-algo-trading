@@ -71,11 +71,9 @@
     "watch-views": "nodemon -e html -x \"npm-run-all --sequential copy-views build-vendors svg localhost-reload\""
   },
   "dependencies": {
-    "@coreui/chartjs": "^2.0.0",
     "@coreui/coreui": "^3.0.0",
     "@coreui/icons": "^1.0.1",
     "@coreui/utils": "^1.2.2",
-    "@popperjs/core": "^2.0.6",
     "bootstrap-input-spinner": "^1.13.4",
     "perfect-scrollbar": "1.5.0"
   },
