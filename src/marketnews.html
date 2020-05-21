@@ -98,15 +98,6 @@
         var articleList = {
           articleList: []
         };
-        //fetch news and display it
-        let response = await fetch(
-          "https://newsapi.org/v2/top-headlines?country=in&category=business", {
-            "method": "GET",
-            "headers": {
-              "X-Api-Key": "254790c6a1f9496a9ef5b735e7a4b910",
-            }
-          });
-
         // Initialize Firebase
         var firebaseConfig = {
           apiKey: "AIzaSyCwDIC1tO0VbVAuYhrCOioXfim74dgAR5M",
@@ -121,7 +112,22 @@
         firebase.initializeApp(firebaseConfig);
         var db = firebase.firestore();
 
-        response.json().then((json) => {
+        //Fetch News
+        async function getNews(){
+          //Proxy server to bypass CORS
+          const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+          const newsAPIUrl = "https://newsapi.org/v2/top-headlines?country=in&category=business";
+          let response = await fetch(
+            proxyUrl+newsAPIUrl, {
+              "method": "GET",
+              "headers": {
+                "Content-Type": "application/json",
+                "X-Api-Key": "254790c6a1f9496a9ef5b735e7a4b910",
+              }
+            });
+        return await response.json();
+        }
+        getNews().then((json) => {
           var html = "<div class=card-body>";
           html += "<div class=list-group>";
           var result = Object.assign({}, json);
