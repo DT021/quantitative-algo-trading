@@ -5,7 +5,7 @@
   <base href="./">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="Cache-Control" content="public" max-age="2628000" />
+  <meta http-equiv="Cache-Control" content="public" max-age="2628000">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta name="description" content="The Right Way to Invest">
   <meta name="author" content="Octal++">
@@ -48,7 +48,6 @@
           "displayMode": "regular",
           "locale": "in"
         }
-
       </script>
     </div>
     <ul class="c-header-nav ml-auto mr-4">
@@ -91,8 +90,14 @@
     </div>
 
     <!-- CoreUI and necessary plugins-->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
     <script>
       async function fetchNews() {
+        var articleListDB = [];
+        var articleList = {
+          articleList: []
+        };
         //fetch news and display it
         let response = await fetch(
           "https://newsapi.org/v2/top-headlines?country=in&category=business", {
@@ -101,52 +106,122 @@
               "X-Api-Key": "254790c6a1f9496a9ef5b735e7a4b910",
             }
           });
-        return await response.json();
-      }
-      fetchNews().then((json) => {
-        console.log(json);
-        var html = "<div class=card-body>";
-        html += "<div class=list-group>";
-        var result = Object.assign({}, json);
-        for (var i = 0; i < json.articles.length; i++) {
-          html += "<a target=_blank class=list-group-item href=" + result.articles[i].url;
-          html += ">";
-          html += "<span>";
-          html += "<img width=200 height=100 src=" + result.articles[i].urlToImage + ">";
-          html += "</img>";
-          html += "<section>"
-          html += "<h4 class=mb-1>" + result.articles[i].title + "</h4>" + "<small>" + result.articles[i]
-            .publishedAt + "</small>";
-          html += "<p class=mb-1>" + result.articles[i].description + "</p>" + "<small>" + result.articles[i]
-            .source.name + "</small>";
-          html += "</section>";
-          html += "</span>";
-          html += "</a>"
-        }
-        html += "</div>";
-        html += "</div>"
-        document.getElementById("news").innerHTML = html;
-        //$("span").addClass("align-items-start");
-        $("span").css("color", "#2c2c2c");
-        $("span").css("display", "-webkit-box");
-        $("span").css("display", "-moz-box");
-        $("span").css("display", "-ms-flexbox");
-        $("span").css("display", "-webkit-flex");
-        $("span").css("display", "flex");
-        $("img").css("text-align", "left");
-        $("img").css("max-width", "200");
-        $("section").css("margin-left", "25px");
-      }).catch(e => console.log(e));
 
+        // Initialize Firebase
+        var firebaseConfig = {
+          apiKey: "AIzaSyCwDIC1tO0VbVAuYhrCOioXfim74dgAR5M",
+          authDomain: "qat-swe.firebaseapp.com",
+          databaseURL: "https://qat-swe.firebaseio.com",
+          projectId: "qat-swe",
+          storageBucket: "qat-swe.appspot.com",
+          messagingSenderId: "1025865166980",
+          appId: "1:1025865166980:web:fde23c31710cc3f99a92d1",
+          measurementId: "G-P419SBRB6D"
+        };
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+
+        response.json().then((json) => {
+          var html = "<div class=card-body>";
+          html += "<div class=list-group>";
+          var result = Object.assign({}, json);
+          if (result.status !== "error") {
+            for (var i = 0; i < json.articles.length; i++) {
+              //Add redundancy
+              var tempObj = {
+                description: result.articles[i].description,
+                publishedAt: result.articles[i].publishedAt,
+                sourceName: result.articles[i].source.name,
+                title: result.articles[i].title,
+                url: result.articles[i].url,
+                urlToImage: result.articles[i].urlToImage
+              }
+              articleList.articleList.push(tempObj);
+              html += "<a target=_blank class=list-group-item href=" + result.articles[i].url;
+              html += ">";
+              html +=
+                "<span>";
+              html += "<img width=200 height=100 src=" + result.articles[i].urlToImage + ">";
+              html +=
+                "</img>";
+              html += "<section>"
+              html += "<h4 class=mb-1>" + result.articles[i].title + "</h4>" + "<small>" + result.articles[i]
+                .publishedAt + "</small>";
+              html += "<p class=mb-1>" + result.articles[i].description + "</p>" +
+                "<small>" + result.articles[i]
+                .source.name + "</small>";
+              html += "</section>";
+              html += "</span>";
+              html += "</a>";
+            }
+            html += "</div>";
+            html += "</div>"
+            document.getElementById("news").innerHTML = html;
+            $("span").css("color", "#2c2c2c");
+            $("span").css("display", "-webkit-box");
+            $("span").css("display", "-moz-box");
+            $("span").css("display", "-ms-flexbox");
+            $("span").css("display", "-webkit-flex");
+            $("span").css("display", "flex");
+            $("img").css("text-align", "left");
+            $("img").css("max-width", "200");
+            $("section").css("margin-left", "25px");
+            // Write to firestore
+            var userRef = db.collection("news").doc("articles");
+            userRef
+              .set(articleList)
+              .then(() => {}).catch((error) => {
+                console.log("Firestore error code: " + error.code);
+                console.log("Error message: " + error.message);
+              });
+          } else {
+            console.log("Loading backup data");
+            // Get Snapshot from Firestore
+            db.collection("news")
+              .doc("articles")
+              .onSnapshot((doc) => {
+                articleListDB = doc.data();
+                console.log(articleListDB);
+                for (var i = 0; i < articleListDB.length; i++) {
+                  html += "<a target=_blank class=list-group-item href=" + articleListDB[i].url;
+                  html += ">";
+                  html +=
+                    "<span>";
+                  html += "<img width=200 height=100 src=" + articleListDB[i].urlToImage + ">";
+                  html +=
+                    "</img>";
+                  html += "<section>"
+                  html += "<h4 class=mb-1>" + articleListDB[i].title + "</h4>" + "<small>" + articleListDB[i]
+                    .publishedAt + "</small>";
+                  html += "<p class=mb-1>" + articleListDB[i].description + "</p>" +
+                    "<small>" + articleListDB[i]
+                    .sourceName + "</small>";
+                  html += "</section>";
+                  html += "</span>";
+                  html += "</a>";
+                }
+                html += "</div>";
+                html += "</div>"
+                document.getElementById("news").innerHTML = html;
+                $("span").css("color", "#2c2c2c");
+                $("span").css("display", "-webkit-box");
+                $("span").css("display", "-moz-box");
+                $("span").css("display", "-ms-flexbox");
+                $("span").css("display", "-webkit-flex");
+                $("span").css("display", "flex");
+                $("img").css("text-align", "left");
+                $("img").css("max-width", "200");
+                $("section").css("margin-left", "25px");
+              });
+          }
+        }).catch(e => console.log(e));
+      }
     </script>
   </div>
   <!--Necessary Scripts-->
-  <link defer href="css/style.css" rel="stylesheet">
-  <link defer rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
-  <script async defer src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
-  <script async defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-  <script async defer src="./js/init-firebase.js"></script>
-  <script async defer src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+  <link defer="" href="css/style.min.css" rel="stylesheet">
+  <link defer="" rel="stylesheet" href="https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css">
+  <script async="" defer="" src="https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js"></script>
 </body>
 
 </html>
