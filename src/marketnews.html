@@ -113,56 +113,110 @@
         var db = firebase.firestore();
 
         //Fetch News
-        async function getNews(){
+        async function getNews() {
           //Proxy server to bypass CORS
           const proxyUrl = "https://cors-anywhere.herokuapp.com/";
           const newsAPIUrl = "https://newsapi.org/v2/top-headlines?country=in&category=business";
           let response = await fetch(
-            proxyUrl+newsAPIUrl, {
+            proxyUrl + newsAPIUrl, {
               "method": "GET",
               "headers": {
                 "Content-Type": "application/json",
                 "X-Api-Key": "254790c6a1f9496a9ef5b735e7a4b910",
               }
             });
-        return await response.json();
+          return await response.json();
         }
         getNews().then((json) => {
           var html = "<div class=card-body>";
           html += "<div class=list-group>";
           var result = Object.assign({}, json);
-          if (result.status !== "error") {
-            for (var i = 0; i < json.articles.length; i++) {
-              //Add redundancy
-              var tempObj = {
-                description: result.articles[i].description,
-                publishedAt: result.articles[i].publishedAt,
-                sourceName: result.articles[i].source.name,
-                title: result.articles[i].title,
-                url: result.articles[i].url,
-                urlToImage: result.articles[i].urlToImage
-              }
-              articleList.articleList.push(tempObj);
-              html += "<a target=_blank class=list-group-item href=" + result.articles[i].url;
-              html += ">";
-              html +=
-                "<span>";
-              html += "<img width=200 height=100 src=" + result.articles[i].urlToImage + ">";
-              html +=
-                "</img>";
-              html += "<section>"
-              html += "<h4 class=mb-1>" + result.articles[i].title + "</h4>" + "<small>" + result.articles[i]
-                .publishedAt + "</small>";
-              html += "<p class=mb-1>" + result.articles[i].description + "</p>" +
-                "<small>" + result.articles[i]
-                .source.name + "</small>";
-              html += "</section>";
-              html += "</span>";
-              html += "</a>";
+          for (var i = 0; i < json.articles.length; i++) {
+            //Add redundancy
+            var tempObj = {
+              description: result.articles[i].description,
+              publishedAt: result.articles[i].publishedAt,
+              sourceName: result.articles[i].source.name,
+              title: result.articles[i].title,
+              url: result.articles[i].url,
+              urlToImage: result.articles[i].urlToImage
             }
-            html += "</div>";
-            html += "</div>"
-            document.getElementById("news").innerHTML = html;
+            articleList.articleList.push(tempObj);
+            html += "<a target=_blank class=list-group-item href=" + result.articles[i].url;
+            html += ">";
+            html +=
+              "<span>";
+            html += "<img width=200 height=100 src=" + result.articles[i].urlToImage + ">";
+            html +=
+              "</img>";
+            html += "<section>"
+            html += "<h4 class=mb-1>" + result.articles[i].title + "</h4>" + "<small>" + result.articles[i]
+              .publishedAt + "</small>";
+            html += "<p class=mb-1>" + result.articles[i].description + "</p>" +
+              "<small>" + result.articles[i]
+              .source.name + "</small>";
+            html += "</section>";
+            html += "</span>";
+            html += "</a>";
+          }
+          html += "</div>";
+          html += "</div>"
+          document.getElementById("news").innerHTML = html;
+          $("span").css("color", "#2c2c2c");
+          $("span").css("display", "-webkit-box");
+          $("span").css("display", "-moz-box");
+          $("span").css("display", "-ms-flexbox");
+          $("span").css("display", "-webkit-flex");
+          $("span").css("display", "flex");
+          $("img").css("text-align", "left");
+          $("img").css("max-width", "200");
+          $("section").css("margin-left", "25px");
+          // Write to firestore
+          var userRef = db.collection("news").doc("articles");
+          userRef
+            .set(articleList)
+            .then(() => {
+              console.log("Written data to Firestore")
+            }).catch((error) => {
+              console.log("Firestore error code: " + error.code);
+              console.log("Error message: " + error.message);
+            });
+        }).catch(() => {
+          console.log("Fetching backup data");
+          // Get Snapshot from Firestore
+          db.collection("news").doc("articles").onSnapshot((doc) => {
+            articleListDB = doc.data();
+            loadNews(articleListDB);
+          });
+          // Load the backup data
+          function loadNews(articleListDB) {
+            console.log("Loading Data");
+            var htmlBackup = "<div class=card-body>";
+            htmlBackup += "<div class=list-group>";
+            for (var counter = 0; counter < articleListDB.articleList.length; counter++) {
+              htmlBackup += "<a target=_blank class=list-group-item href=" + articleListDB.articleList[counter]
+                .url;
+              htmlBackup += ">";
+              htmlBackup +=
+                "<span>";
+              htmlBackup += "<img width=200 height=100 src=" + articleListDB.articleList[counter].urlToImage +
+              ">";
+              htmlBackup +=
+                "</img>";
+              htmlBackup += "<section>"
+              htmlBackup += "<h4 class=mb-1>" + articleListDB.articleList[counter].title + "</h4>" + "<small>" +
+                articleListDB.articleList[counter]
+                .publishedAt + "</small>";
+              htmlBackup += "<p class=mb-1>" + articleListDB.articleList[counter].description + "</p>" +
+                "<small>" + articleListDB.articleList[counter]
+                .sourceName + "</small>";
+              htmlBackup += "</section>";
+              htmlBackup += "</span>";
+              htmlBackup += "</a>";
+            };
+            htmlBackup += "</div>";
+            htmlBackup += "</div>";
+            document.getElementById("news").innerHTML = htmlBackup;
             $("span").css("color", "#2c2c2c");
             $("span").css("display", "-webkit-box");
             $("span").css("display", "-moz-box");
@@ -172,55 +226,8 @@
             $("img").css("text-align", "left");
             $("img").css("max-width", "200");
             $("section").css("margin-left", "25px");
-            // Write to firestore
-            var userRef = db.collection("news").doc("articles");
-            userRef
-              .set(articleList)
-              .then(() => {}).catch((error) => {
-                console.log("Firestore error code: " + error.code);
-                console.log("Error message: " + error.message);
-              });
-          } else {
-            console.log("Loading backup data");
-            // Get Snapshot from Firestore
-            db.collection("news")
-              .doc("articles")
-              .onSnapshot((doc) => {
-                articleListDB = doc.data();
-                console.log(articleListDB);
-                for (var i = 0; i < articleListDB.length; i++) {
-                  html += "<a target=_blank class=list-group-item href=" + articleListDB[i].url;
-                  html += ">";
-                  html +=
-                    "<span>";
-                  html += "<img width=200 height=100 src=" + articleListDB[i].urlToImage + ">";
-                  html +=
-                    "</img>";
-                  html += "<section>"
-                  html += "<h4 class=mb-1>" + articleListDB[i].title + "</h4>" + "<small>" + articleListDB[i]
-                    .publishedAt + "</small>";
-                  html += "<p class=mb-1>" + articleListDB[i].description + "</p>" +
-                    "<small>" + articleListDB[i]
-                    .sourceName + "</small>";
-                  html += "</section>";
-                  html += "</span>";
-                  html += "</a>";
-                }
-                html += "</div>";
-                html += "</div>"
-                document.getElementById("news").innerHTML = html;
-                $("span").css("color", "#2c2c2c");
-                $("span").css("display", "-webkit-box");
-                $("span").css("display", "-moz-box");
-                $("span").css("display", "-ms-flexbox");
-                $("span").css("display", "-webkit-flex");
-                $("span").css("display", "flex");
-                $("img").css("text-align", "left");
-                $("img").css("max-width", "200");
-                $("section").css("margin-left", "25px");
-              });
           }
-        }).catch(e => console.log(e));
+        });
       }
     </script>
   </div>
