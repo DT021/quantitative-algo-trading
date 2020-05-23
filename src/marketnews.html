@@ -12,6 +12,34 @@
   <meta name="keyword"
     content="stock market,market,finance,index,commodity,futures,forex,prices,stock exchange,bse,nasdaq">
   <title>Quantitative Algo-Trading</title>
+  <style type="text/css" media="screen">
+    #news img{
+      margin-top: 30px;
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+      #news p{
+        font-size: 1rem;
+      }
+      #news img{
+        margin-top: 5rem;
+        width:600vw;
+        height: 50%;
+      }
+    }
+  @media (min-width: 320px) and (max-width: 480px) {
+      #news h4{
+        font-size: 15px;
+      }
+      #news p{
+        font-size: 13px;
+      }
+       #news img{
+        margin-top: 70%;
+        width:500vw;
+        height: 50%;
+      }
+  }
+  </style>
 </head>
 
 <body class="c-app" onload="fetchNews()" style="font-family: Avenir, Helvetica, Arial, sans-serif;">
@@ -22,7 +50,7 @@
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
         async="">
         {
-          "symbols": [{
+          "symbols" : [{
               "description": "Sensex",
               "proName": "BSE:SENSEX"
             },
@@ -43,10 +71,10 @@
               "proName": "BSE:RELIANCE"
             }
           ],
-          "colorTheme": "light",
-          "isTransparent": false,
-          "displayMode": "regular",
-          "locale": "in"
+          "colorTheme" : "light",
+          "isTransparent" : false,
+          "displayMode" : "regular",
+          "locale" : "in"
         }
       </script>
     </div>
@@ -146,7 +174,7 @@
             html += ">";
             html +=
               "<span>";
-            html += "<img width=200 height=100 src=" + result.articles[i].urlToImage + ">";
+            html += "<img width=100% height=100% src=" + result.articles[i].urlToImage + ">";
             html +=
               "</img>";
             html += "<section>"
