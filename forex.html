@@ -88,11 +88,22 @@
       button:focus {
         outline: 0;
       }
-      @media only screen and (max-width: 600px){
-        .forex-heat{
-          width:100%;
-        }
+      @media (min-width: 481px) and (max-width: 767px) {
+      .forex-heat{
+        width: 100% !important;
+        height: 690px ;
+         overflow-y: hidden;
+         padding-left: 15rem;
       }
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      .forex-heat{
+        height: 690px;
+        width: 100% !important;
+        overflow-y: hidden;
+       padding-left: 20rem;
+      }
+    }
     </style>
   </head>
 
@@ -328,9 +339,9 @@
               
               <!-- TradingView Widget END -->
               <div class="row">
-                <div class="col-md-12 col-xs-12 col-lg-6 forex-heat" style="margin-top: 3rem;">
+                <div class="col-md-12 col-xs-12 col-lg-6  forex-heat" style="margin-top: 3rem;">
                   <div class="tradingview-widget-container" style="padding-right:1.3em;">
-                    <h2>Forex Heat Map</h2>
+                    <h2 style="">Forex Heat Map</h2>
                     <div class="tradingview-widget-container__widget"></div>
                     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async="">
                       {
@@ -351,14 +362,13 @@
                         ],
                         "isTransparent": false,
                         "colorTheme": "light",
-                        "locale": "en",
-                        "autosize":true
+                        "locale": "en"
                       }
                     </script>
                   </div>
                 </div>
-                <div class="col-md-12 col-xs-12 col-lg-6" style="margin-top:3rem;">
-                  <div class="tradingview-widget-container__widget
+                <div class="col-md-12 col-xs-12 col-lg-6 " style="margin-top:3rem;">
+                  <div class="tradingview-widget-container__widget forex-rate
                   " style="padding-left:1.4rem;">
                     <h2>Forex Rates</h2>
                     <div class="tradingview-widget-container__widget"></div>
