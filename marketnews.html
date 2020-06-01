@@ -12,6 +12,7 @@
   <meta name="keyword"
     content="stock market,market,finance,index,commodity,futures,forex,prices,stock exchange,bse,nasdaq">
   <title>Quantitative Algo-Trading</title>
+  <script src="js/init-app.js"></script>
   <style type="text/css" media="screen">
     #news img{
       margin-top: 30px;
@@ -40,6 +41,7 @@
       }
   }
   </style>
+
 </head>
 
 <body class="c-app" onload="fetchNews()" style="font-family: Avenir, Helvetica, Arial, sans-serif;">
@@ -127,16 +129,7 @@
           articleList: []
         };
         // Initialize Firebase
-        var firebaseConfig = {
-          apiKey: "#",
-          authDomain: "#",
-          databaseURL: "#",
-          projectId: "#",
-          storageBucket: "#",
-          messagingSenderId: "#",
-          appId: "#",
-          measurementId: "#"
-        };
+        var firebaseConfig = appConfig[1];
         firebase.initializeApp(firebaseConfig);
         var db = firebase.firestore();
 
@@ -150,7 +143,7 @@
               "method": "GET",
               "headers": {
                 "Content-Type": "application/json",
-                "X-Api-Key": "254790c6a1f9496a9ef5b735e7a4b910",
+                "X-Api-Key": appConfig[0].newsAPI,
               }
             });
           return await response.json();

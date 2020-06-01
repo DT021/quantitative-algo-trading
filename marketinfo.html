@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Quantitative Algo-Trading</title>
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
-    <script src="./js/symbols.js"></script>
+    <script src="js/symbols.js"></script>
+    <script src="js/init-app.js"></script>
     <style>
       .floating-tooltip-2 {
         width: 96px;
@@ -300,7 +301,7 @@
             "method": "GET",
             "headers": {
               "x-rapidapi-host": "alpha-vantage.p.rapidapi.com",
-              "x-rapidapi-key": "2ff57707ffmshea56c7cc8ce014fp11887djsn57421b958e43"
+              "x-rapidapi-key": appConfig[0].alphaVantage
             }
           });
         var result = await response.json();
