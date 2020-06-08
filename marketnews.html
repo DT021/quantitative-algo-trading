@@ -15,27 +15,28 @@
   <script src="js/init-app.js"></script>
   <style type="text/css" media="screen">
     #news img{
-      margin-top: 30px;
+      margin:auto 0;
     }
     @media (min-width: 481px) and (max-width: 767px) {
+      #news h4{
+        font-size: 1.1rem;
+      }
       #news p{
         font-size: 1rem;
       }
       #news img{
-        margin-top: 5rem;
         width:600vw;
         height: 50%;
       }
     }
   @media (min-width: 320px) and (max-width: 480px) {
       #news h4{
-        font-size: 15px;
+        font-size: .9rem;
       }
       #news p{
-        font-size: 13px;
+        font-size: .7rem;
       }
        #news img{
-        margin-top: 70%;
         width:500vw;
         height: 50%;
       }
@@ -220,7 +221,7 @@
               htmlBackup += ">";
               htmlBackup +=
                 "<span>";
-              htmlBackup += "<img width=200 height=100 src=" + articleListDB.articleList[counter].urlToImage +
+              htmlBackup += "<img width=100% height=100% src=" + articleListDB.articleList[counter].urlToImage +
               ">";
               htmlBackup +=
                 "</img>";
