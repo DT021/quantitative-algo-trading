@@ -17,26 +17,16 @@
     #news img{
       margin:auto 0;
     }
-    @media (min-width: 481px) and (max-width: 767px) {
-      #news h4{
-        font-size: 1.1rem;
-      }
-      #news p{
-        font-size: 1rem;
-      }
+     @media (min-width: 481px) and (max-width: 767px) {
       #news img{
+        margin: auto;
         width:600vw;
         height: 50%;
       }
     }
   @media (min-width: 320px) and (max-width: 480px) {
-      #news h4{
-        font-size: .9rem;
-      }
-      #news p{
-        font-size: .7rem;
-      }
        #news img{
+        margin: auto;
         width:500vw;
         height: 50%;
       }
@@ -164,14 +154,14 @@
               urlToImage: result.articles[i].urlToImage
             }
             articleList.articleList.push(tempObj);
-            html += "<a target=_blank class=list-group-item href=" + result.articles[i].url;
+            html += "<a target=_blank class=list-group-item row href=" + result.articles[i].url;
             html += ">";
             html +=
-              "<span>";
-            html += "<img width=100% height=100% src=" + result.articles[i].urlToImage + ">";
+              "<span class=row>";
+            html += "<img width=100% height=100% class=col-md-3 col-lg-3 col-xs-12 src=" + result.articles[i].urlToImage + ">";
             html +=
               "</img>";
-            html += "<section>"
+            html += "<section class=col-md-9 col-lg-9 col-xs-12>"
             html += "<h4 class=mb-1>" + result.articles[i].title + "</h4>" + "<small>" + result.articles[i]
               .publishedAt + "</small>";
             html += "<p class=mb-1>" + result.articles[i].description + "</p>" +
@@ -220,12 +210,12 @@
                 .url;
               htmlBackup += ">";
               htmlBackup +=
-                "<span>";
-              htmlBackup += "<img width=100% height=100% src=" + articleListDB.articleList[counter].urlToImage +
+                "<span class=row>";
+              htmlBackup += "<img width=100% height=100% class=col-md-3 col-lg-3 col-xs-12 src=" + articleListDB.articleList[counter].urlToImage +
               ">";
               htmlBackup +=
                 "</img>";
-              htmlBackup += "<section>"
+              htmlBackup += "<section class=col-md-9 col-lg-9 col-xs-12>"
               htmlBackup += "<h4 class=mb-1>" + articleListDB.articleList[counter].title + "</h4>" + "<small>" +
                 articleListDB.articleList[counter]
                 .publishedAt + "</small>";
