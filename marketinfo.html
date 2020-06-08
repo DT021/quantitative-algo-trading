@@ -293,7 +293,6 @@
       symbol.addEventListener('change', getData);
       async function getData() {
         let sym = symbol.value;
-        console.log(sym);
         var chartD = [];
         let response = await fetch(
           "https://alpha-vantage.p.rapidapi.com/query?outputsize=compact&datatype=json&function=TIME_SERIES_DAILY&symbol=" +
@@ -318,7 +317,6 @@
           chartD.push(tempObj);
         }
         series.setData(chartD);
-        console.log(chartD);
       }
 
       var container = document.getElementById('charter');
